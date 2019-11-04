@@ -32,7 +32,20 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 */
 
-       // Map
+public class RomanToInteger {
+
+	/**
+	 * 왼쪽 문자가 더 큰 수 면 서로 뺄셈
+	 * 오른쪽 문자가 더 큰 수면 서로 덧셈
+	 */
+	
+	public static void main(String[] args) {
+		System.out.println(RoamanInteger("IV")); // 4
+		System.out.println(RoamanInteger("LVIII")); // 58
+	}
+
+	private static int RoamanInteger(String s) {
+        // Map
         Map<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
@@ -41,3 +54,17 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
         map.put('C', 100);
         map.put('D', 500);
         map.put('M', 1000);
+		
+       int length = s.length();
+       int result = map.get(s.charAt(length - 1));
+
+       for(int i = length-2 ; i >= 0; i--) {
+              if(map.get(s.charAt(i)) >= map.get(s.charAt(i+1))) {
+                     result += map.get(s.charAt(i));
+              } else {
+                     result -= map.get(s.charAt(i));
+              }
+       }
+          return result;
+	}
+}
