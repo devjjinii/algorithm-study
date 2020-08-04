@@ -1,6 +1,6 @@
 ## 알고리즘 문제 해결 전략 :heavy_check_mark:
 
->> https://book.algospot.com/index.html
+- https://book.algospot.com/index.html
 
 - [ ] 1-8 <br>
 - [ ] 10 <br>
