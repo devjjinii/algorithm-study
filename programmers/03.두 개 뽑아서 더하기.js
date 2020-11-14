@@ -13,6 +13,7 @@ function solution(numbers){
         }
     }
 
+        // const answer = [...new Set(temp)] : 다른사람 코드
     answer.sort((a,b) => a-b);
     return answer;
 };
